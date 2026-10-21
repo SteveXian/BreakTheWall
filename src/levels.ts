@@ -31,11 +31,11 @@ export interface LevelDef {
 }
 
 export const WORLD_W = 1600;
-export const WORLD_H = 900;
+export const WORLD_H = 960;
 export const GROUND_Y = 800;
 export const DEFAULT_CELL = 50;
 /** Part of the world the camera frames (16:9); keeps blocks big on small screens. */
-export const VIEW = { x: 140, y: 110, w: 1404, h: 790 };
+export const VIEW = { x: 140, y: 150, w: 1440, h: 810 };
 
 export const MATERIAL_CODES: Record<string, MaterialId> = {
   g: 'glass',
@@ -62,7 +62,7 @@ export const LEVELS: LevelDef[] = [
   },
   {
     items: ['ball'],
-    par: 2,
+    par: 4,
     structures: [{ x: 1150, grid: ['GGG', 'GGG', 'GGG'] }],
   },
   {
@@ -80,7 +80,7 @@ export const LEVELS: LevelDef[] = [
   },
   {
     items: ['bottle'],
-    par: 2,
+    par: 3,
     structures: [
       { x: 1000, grid: ['II', 'II'] },
       { x: 1300, y: 600, grid: ['GG', 'II', '####'] },
@@ -88,14 +88,14 @@ export const LEVELS: LevelDef[] = [
   },
   {
     items: ['bottle'],
-    par: 3,
+    par: 4,
     structures: [{ x: 1150, grid: ['G..G', 'IIII', 'IGGI', 'IIII'] }],
   },
 
   // ---- Mix: ball + bottle ----
   {
     items: ['ball', 'bottle'],
-    par: 3,
+    par: 4,
     structures: [
       { x: 1000, grid: ['G', 'W', 'G', 'W'] },
       { x: 1250, grid: ['II', 'GG', 'II'] },
@@ -103,7 +103,7 @@ export const LEVELS: LevelDef[] = [
   },
   {
     items: ['bottle', 'ball'],
-    par: 3,
+    par: 5,
     structures: [
       { x: 950, grid: ['GG', 'WW'] },
       { x: 1150, y: 560, grid: ['II', '###'] },
@@ -120,7 +120,7 @@ export const LEVELS: LevelDef[] = [
   },
   {
     items: ['balloon'],
-    par: 2,
+    par: 3,
     structures: [
       { x: 1000, grid: ['S.S', 'SSS', 'SSS', 'SSS'] },
       { x: 1300, grid: ['S.S', 'SSS', 'SSS', 'SSS'] },
@@ -128,14 +128,14 @@ export const LEVELS: LevelDef[] = [
   },
   {
     items: ['balloon'],
-    par: 3,
+    par: 4,
     structures: [{ x: 1150, grid: ['S...S', 'SS.SS', 'SSSSS', 'SWWWS', 'SW.WS'] }],
   },
 
   // ---- Mix: ball + bottle + balloon ----
   {
     items: ['balloon', 'bottle', 'ball'],
-    par: 3,
+    par: 4,
     structures: [{ x: 1150, grid: ['S.S.S', 'SGSGS', 'SSSSS', 'SGSGS'] }],
   },
   {
@@ -169,7 +169,7 @@ export const LEVELS: LevelDef[] = [
   // ---- Mix ----
   {
     items: ['bowling', 'balloon', 'bottle', 'ball'],
-    par: 4,
+    par: 5,
     structures: [
       { x: 980, grid: ['GG', 'BB', 'BB'] },
       { x: 1300, grid: ['S.S', 'SSS', 'WWW', 'WWW'] },
@@ -177,7 +177,7 @@ export const LEVELS: LevelDef[] = [
   },
   {
     items: ['bowling', 'balloon', 'bottle', 'ball'],
-    par: 4,
+    par: 6,
     structures: [
       { x: 1000, y: 620, grid: ['GGG', '#####'] },
       { x: 1250, grid: ['wwwww', 'B.S.B', 'B.S.B', 'BBSBB'] },
@@ -220,7 +220,7 @@ export const LEVELS: LevelDef[] = [
   },
   {
     items: ALL_BEFORE_BOMB,
-    par: 5,
+    par: 6,
     structures: [
       { x: 950, grid: ['G', 'G', 'G'] },
       { x: 1150, grid: ['iii', 'S.S', 'S.S'] },
@@ -242,7 +242,7 @@ export const LEVELS: LevelDef[] = [
   },
   {
     items: ['bomb'],
-    par: 3,
+    par: 4,
     structures: [
       { x: 1000, grid: ['RR', 'RR', 'RR', 'RR'] },
       { x: 1300, grid: ['RR', 'BB', 'RR', 'BB'] },
@@ -252,7 +252,7 @@ export const LEVELS: LevelDef[] = [
   // ---- Mix ----
   {
     items: ALL,
-    par: 4,
+    par: 5,
     structures: [
       { x: 1000, grid: ['GG', 'RR', 'RR'] },
       { x: 1300, grid: ['S.S', 'SSS', 'III'] },
@@ -270,7 +270,7 @@ export const LEVELS: LevelDef[] = [
   // ---- Grand finale ----
   {
     items: ALL,
-    par: 5,
+    par: 6,
     structures: [
       { x: 950, grid: ['G.G', 'GGG', 'SSS'] },
       { x: 1200, y: 520, grid: ['I', 'I', '###'] },
@@ -279,7 +279,7 @@ export const LEVELS: LevelDef[] = [
   },
   {
     items: ALL,
-    par: 5,
+    par: 6,
     structures: [{ x: 1180, grid: ['R.....R', 'RR.G.RR', 'ggggggg', 'S.I.I.S', 'SWWWWWS', 'SW...WS'] }],
   },
   {
@@ -293,7 +293,7 @@ export const LEVELS: LevelDef[] = [
   },
   {
     items: ALL,
-    par: 6,
+    par: 7,
     structures: [
       { x: 1180, grid: ['G...I...G', 'R...W...R', 'rrrrrrrrr', 'S.B.S.B.S', 'S.B.S.B.S', 'SWBWSWBWS'] },
     ],

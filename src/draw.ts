@@ -26,7 +26,7 @@ export function seeded(seed: number) {
 
 const clouds = Array.from({ length: 6 }, (_, i) => ({
   x: (i * 317) % WORLD_W,
-  y: 190 + ((i * 97) % 200),
+  y: 230 + ((i * 97) % 180),
   s: 0.7 + ((i * 37) % 10) / 15,
   v: 6 + (i % 3) * 4,
 }));
@@ -57,7 +57,7 @@ export function drawBackground(ctx: Ctx, t: number, extraLeft: number, extraRigh
 
   // Smiling sun
   ctx.save();
-  ctx.translate(1440, 225);
+  ctx.translate(1450, 280);
   ctx.rotate(t * 0.2);
   ctx.fillStyle = '#ffd93b';
   for (let i = 0; i < 12; i++) {
@@ -70,7 +70,7 @@ export function drawBackground(ctx: Ctx, t: number, extraLeft: number, extraRigh
   }
   ctx.restore();
   ctx.save();
-  ctx.translate(1440, 225);
+  ctx.translate(1450, 280);
   ctx.fillStyle = '#ffe14d';
   ctx.beginPath();
   ctx.arc(0, 0, 62, 0, Math.PI * 2);
