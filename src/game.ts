@@ -847,6 +847,7 @@ export class Game {
       for (let deg = -80; deg <= 60; deg += 1) {
         const a = (deg * Math.PI) / 180;
         const pull = { x: -Math.cos(a) * MAX_PULL * power, y: Math.sin(a) * MAX_PULL * power };
+        if (pull.y > GROUND_Y - 30 - SLING_Y) continue;
         const v = this.launchVelocity(pull);
         const raw = this.predict({ x: SLING_X + pull.x, y: SLING_Y + pull.y }, v, item, 240);
         const pts = raw.flatMap((p, i) => {
